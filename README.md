@@ -2,4 +2,4 @@
 
 Clevertec marathon project development. Stage: code refactor, creating a user account.
 
- <img src="images/main.png" alt="Logo">
+ <img src="content/images/main.png" alt="Logo">

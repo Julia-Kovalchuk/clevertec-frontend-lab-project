@@ -22,7 +22,7 @@ export const AsideBar = ({ isOpen, handleCategoryView, handleView }: IProps) => 
   const dispatch = useAppDispatch();
   const { errorCategories, categories } = useAppSelector(getCategories);
   const { categoriesAmount, error } = useAppSelector(getAllBooks);
-  const { bookingID, isSuccess } = useAppSelector(bookBook);
+  const { bookingID } = useAppSelector(bookBook);
 
   useEffect(() => {
     const categoryName = categories.find((category) => category.path === currentPath.category)?.name;

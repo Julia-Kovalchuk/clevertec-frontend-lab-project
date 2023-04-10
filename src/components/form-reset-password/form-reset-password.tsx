@@ -62,7 +62,6 @@ export const FormResetPassword = () => {
   password.current = watch('password', '');
   passwordConfirmation.current = watch('passwordConfirmation', '');
 
-  // в браузере поведение валидации было согласно тестам, в тестах - валидация не работала - об этом много людей писало в телеге. Пришлось выкручиваться, поэтому в этом коже танцы с бубнами, точнее со стейтами
   const validationRulesConfirmation = {
     passwordConfirmation: {
       required: 'Поле не может быть пустым',
@@ -176,8 +175,8 @@ export const FormResetPassword = () => {
                     </EyeBox>
                   )}
                   {!isPasswordMatch && <Error data-test-id='hint'>Пароли не совпадают</Error>}
-                  {value === undefined && emptyErrorpasswordConfirmation && (
-                    <Error data-test-id='hint'>Поле не может быть пустым</Error>
+                  {errors.passwordConfirmation && (
+                    <Error data-test-id='hint'>{errors.passwordConfirmation.message}</Error>
                   )}
                 </InputContainer>
               )}
